@@ -21,7 +21,7 @@ btn.addEventListener("click", function(){
             console.log(json)
         })
         .then(function(){
-           document.getElementById("img").innerHTML = "<img src='/assets/"+ description +".svg'> ";
+           document.getElementById("img").innerHTML = "<img src='assets/"+ description +".svg'> ";
         })
         .catch(function(e){
             if(e.message === "Cannot read properties of undefined (reading 'temp')"){
