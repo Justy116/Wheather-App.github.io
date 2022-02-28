@@ -49,3 +49,33 @@ body{
     border-radius: 10px;
     padding: 40px;
 }
+
+.img{
+    height: 30px;
+}
+
+.img2{
+    border-radius: 15px;
+    padding: 5px;
+    width: 300px;
+    height: 200px;
+}
+
+.information{
+    background-color: rgba(255, 255, 255, 0.219);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+
+@media(min-width: 850px) {
+    .img2{
+        width: 600px;
+        height: 400px;
+    }
+    .img{
+        height: 60px;
+    }
+}

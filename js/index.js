@@ -11,17 +11,22 @@ btn.addEventListener("click", function(){
             return resolve.json();
         })
         .then(function(json){
-            let temp = json.main.temp - 273 | 0;
             let output = document.getElementById("output");
             let result = document.getElementById("div");
+            let information = document.getElementById("information");
+            let temp = json.main.temp - 273 | 0;
             let nome = json.name;
+            let tempMin = json.main.temp_min - 273 | 0;
+            let tempMax = json.main.temp_max - 273 | 0;
             description = json.weather[0].main;
             output.innerHTML = "In " + nome + " there are " + temp + "° degrees";
+            information.innerHTML ="temp min: " + tempMin + "°  temp max:" + tempMax + "°";
             result.classList.add("card");
-            console.log(json)
+            information.classList.add("information");
         })
         .then(function(){
-           document.getElementById("img").innerHTML = "<img src='assets/"+ description +".svg'> ";
+           document.getElementById("img").innerHTML = "<img class='img' src='assets/"+ description +".svg'> ";
+           document.getElementById("img2").innerHTML = "<img class='img2' src='assets/"+ description +".jpg'> ";
         })
         .catch(function(e){
             if(e.message === "Cannot read properties of undefined (reading 'temp')"){
